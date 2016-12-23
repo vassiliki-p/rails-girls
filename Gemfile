@@ -5,7 +5,13 @@ gem 'gravtastic'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3' #change this to upload to heroku,which uses a different db,not sqlite3
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 # Use SCSS for stylesheets
